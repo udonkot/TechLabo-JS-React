@@ -30,7 +30,7 @@ const SlackChannelCommentMonitor: React.FC<IProps> = (props) => {
         const newGrapthLabel: string[] = []
 
 
-        userCommentList.map((userData) => {
+        userCommentList.forEach((userData) => {
           newGrapthLabel.push(userData.user)
           newGrapthData.push(userData.value)
         })

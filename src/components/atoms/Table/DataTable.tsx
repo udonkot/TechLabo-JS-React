@@ -1,5 +1,4 @@
 import React from 'react';
-import {TableBodyListType} from './TableBody.type';
 import Table from 'react-bootstrap/Table';
 import {UserCommentListType} from '../../molecules/SlackCommentSummaryTable/UserCommentList.type'
 
@@ -25,7 +24,7 @@ const DataTable: React.FC<IProps> = (props) => {
   const dataList: JSX.Element[] = [];
 
   const tbodyList = () => { 
-    props.tbodyList.map((data,idx) => {
+    props.tbodyList.forEach((data,idx) => {
       // dataListを取得
       dataList.push(
         <tr>

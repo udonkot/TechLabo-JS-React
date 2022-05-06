@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {SlackChannelListTableType} from './SlackChannelListTable.type'
 import Table from 'react-bootstrap/Table';
-
-import axios from 'axios'
 
 interface IProps {
   tableData:SlackChannelListTableType[]
@@ -11,7 +9,7 @@ interface IProps {
 const SlackChannelListTable: React.FC<IProps> = (props) => {
   const dataList: JSX.Element[] = [];
   const tbodyList = () => { 
-    props.tableData.map((data,idx) => {
+    props.tableData.forEach((data,idx) => {
       // dataListを取得
       dataList.push(
         <tr key={idx}>

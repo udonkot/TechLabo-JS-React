@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Fragment } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
@@ -38,7 +38,7 @@ function App() {
 
   const [data, setData] = React.useState<SlackChannelListTableType[]>([]);
   const [selectList, setSelectList] = React.useState<OptionListType[]>([])
-  if(data.length == 0)  {
+  if(data.length === 0)  {
 
   const getChannel = async () => {
             const response = await axios.get('https://dxservice-javafuncsample.azurewebsites.net/api/slackchannels?');
@@ -48,7 +48,7 @@ function App() {
             const newSelectList: OptionListType[] = []
 
 
-            channelList.map((data) => {
+            channelList.forEach((data) => {
               if(!data.isArchived) {
                 const wrkData:OptionListType = {
                   id: data.id,
@@ -56,6 +56,7 @@ function App() {
                 }
                 newSelectList.push(wrkData)
               }
+
             })
             setSelectList(newSelectList)
   }

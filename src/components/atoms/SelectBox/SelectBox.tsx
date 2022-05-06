@@ -13,7 +13,7 @@ const SelectBox: React.FC<IProps> = (props) => {
   const option = []; 
   option.push(<option value='-' key='999'></option>)
 
-  props.optionList.map((data, idx) => {
+  props.optionList.forEach((data, idx) => {
     option.push(<option value={data.id} key={idx}>{data.name}</option>)
   })
 

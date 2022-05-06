@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import DataTable from '../../atoms/Table/DataTable';
 import {UserCommentListType} from './UserCommentList.type'
 
-import axios from 'axios'
 
 interface IProps {
 //  channelId:String

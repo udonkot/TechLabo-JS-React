@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {OptionListType} from '../../atoms/SelectBox/OptionList.type'
 import SelectBox from '../../atoms/SelectBox/SelectBox'
-
-import axios from 'axios'
 
 interface IProps {
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
