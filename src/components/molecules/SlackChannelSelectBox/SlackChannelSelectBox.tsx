@@ -6,7 +6,7 @@ import axios from 'axios'
 
 interface IProps {
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-    data: OptionListType[]
+    data: OptionListType[];
 }
 
 const SlackChannelSelectBox: React.FC<IProps> = (props) => {

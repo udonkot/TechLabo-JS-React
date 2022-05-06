@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import DataTable from '../../atoms/Table/DataTable';
 import {UserCommentListType} from './UserCommentList.type'
-import {SlackChannelListTableType} from '../../molecules//SlackChannelListTable/SlackChannelListTable.type'
 
 import axios from 'axios'
 

@@ -38,11 +38,9 @@ function App() {
 
   const [data, setData] = React.useState<SlackChannelListTableType[]>([]);
   const [selectList, setSelectList] = React.useState<OptionListType[]>([])
-  alert('data=' + data.length)
   if(data.length == 0)  {
 
   const getChannel = async () => {
-    alert('call slackAPI')
             const response = await axios.get('https://dxservice-javafuncsample.azurewebsites.net/api/slackchannels?');
             const channelList:SlackChannelListTableType[] = response.data.result;
             setData(channelList)
@@ -60,9 +58,9 @@ function App() {
               }
             })
             setSelectList(newSelectList)
-
-            alert('セット完了:' + data)
   }
+
+   
   getChannel();
 }
 
