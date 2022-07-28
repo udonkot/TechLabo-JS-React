@@ -5,6 +5,8 @@ import axios from 'axios'
 import {UserCommentListType} from '../../molecules/SlackCommentSummaryTable/UserCommentList.type'
 import SlackCommentSummaryGrapth from '../../molecules/SlackCommentSummaryGrapth/SlackCommentSummaryGrapth'
 import {OptionListType} from '../../atoms/SelectBox/OptionList.type'
+import { useSelector, useDispatch } from 'react-redux';
+import { increase } from '../../../redux/counterSlice';
 
 
 interface IProps {
@@ -13,7 +15,7 @@ interface IProps {
 
 
 
-const SlackChannelCommentMonitor: React.FC<IProps> = (props) => {
+const SlackChannelCommentMonitor: React.FC = () => {
 //  const [channelId, setChannelId] = React.useState<String>('')
   const [data, setData] = React.useState<UserCommentListType[]>([]);
   const [grapthData, setGrapthData] = React.useState<number[]>([]);
@@ -42,9 +44,18 @@ const SlackChannelCommentMonitor: React.FC<IProps> = (props) => {
     getComment();
   }
 
+  const count = useSelector((hoge: any) => 
+    hoge.counter.count
+  );
+  const dispatch = useDispatch();
+
   return (
     <div className="SlackChannelCommentMonitor">
+      {count}
+      <button onClick={() => dispatch(increase())}>Up</button>
+{/*
       <SlackChannelSelectBox data={props.selectList} onChange={onChange}/>
+  */}
       <SlackCommentSummaryTable tableData={data}/>
       <SlackCommentSummaryGrapth dataList={grapthData} labelList={grapthLabel} />
     </div>
