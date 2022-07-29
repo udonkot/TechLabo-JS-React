@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Table from 'react-bootstrap/Table';
-import { isTypeNode } from 'typescript';
-import { useAppDispatch, useAppSelector } from '../../../store/store.hooks';
 import GrapthBar from '../../atoms/Grapth/GrapthBar';
 import { OptionListType } from '../../atoms/SelectBox/OptionList.type';
 import SelectBox from '../../atoms/SelectBox/SelectBox';
 import {Title} from '../../atoms/Title/Title';
-import DataTable from '../../atoms/Table/DataTable';
 import axios from 'axios';
 import { SlackChannelCommentResponseType } from './SlackChannelCommentMonitor.type';
+import { useAppSelector } from '../../../store/store.hooks';
 
+/*
 const DUMMY_DATALIST = {
   result: [
     {
@@ -71,6 +70,7 @@ const SELECT_LIST = [
     id: 'C03408J995K'
   },
 ]
+*/
 const RADIO_LIST = [
   {
     name: '今月',
@@ -108,7 +108,6 @@ const SlackChannelCommentMonitor: React.FC = (props) => {
 
   const [responseData, setResponseData] = React.useState<SlackChannelCommentResponseType>();
 
-  const [select, setSelect] = React.useState<string>('');
   const [radio, setRadio] = React.useState<string>('');
   const [status, setStatus] = React.useState<string>('未取得');
 
@@ -166,11 +165,11 @@ const SlackChannelCommentMonitor: React.FC = (props) => {
       labelTitle: '',
     };
 
-    responseData?.map((item, index) => {
+    responseData?.forEach((item, index) => {
       // window.alert(item.type + ' ' + e.target.value);
       if (item.type === e.target.value) {
         wrkCommentDataType.labelTitle = item.yyyymm.concat('のslackコメント数')
-        item.comments?.map((comment) => {
+        item.comments?.forEach((comment) => {
           wrkCommentDataType.dataList.push(comment.value);
           wrkCommentDataType.labelList.push(comment.user);
         })

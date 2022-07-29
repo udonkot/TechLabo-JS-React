@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavLink } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Navigate() {

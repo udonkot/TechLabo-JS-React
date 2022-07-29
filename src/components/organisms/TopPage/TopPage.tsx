@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import logo from './logo.svg';
 
 import { getSlackChannelListAPIData } from '../../../modules/logic/SlackAPILogic';

@@ -1,5 +1,4 @@
 import React from 'react';
-import SlackChannelSelectBox from '../..//molecules/SlackChannelSelectBox/SlackChannelSelectBox';
 import SlackCommentSummaryTable from '../../molecules/SlackCommentSummaryTable/SlackCommnetSummaryTable';
 import axios from 'axios'
 import {UserCommentListType} from '../../molecules/SlackCommentSummaryTable/UserCommentList.type'

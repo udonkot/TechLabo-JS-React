@@ -1,5 +1,5 @@
 // liblary
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Provider} from 'react-redux'
 import {store} from './store/store.config'
@@ -28,9 +28,6 @@ const App: React.FC = () => {
 
   // TODO:SlackAPIコール
   // reduxにdhispatch
-
-  // TODO:API取得状況のメッセージをstateで管理する
-  let tableData: SlackChannelListTableType[] = [];
 
   // UI
   return (
