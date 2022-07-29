@@ -1,1 +1,3 @@
-import React from 'react'
+import SlackChannelListTable from '../../organisms/SlackChannelListTable/SlackChannelListTable'
+
+export default SlackChannelListTable;
