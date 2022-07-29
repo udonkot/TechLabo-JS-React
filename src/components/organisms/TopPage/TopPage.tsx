@@ -17,10 +17,6 @@ const TopPage: React.FC = () => {
 
   }
 
-
-  const tableData = useAppSelector((s) => s.SlackChannelList);
-  console.log('redux length:' + tableData.length);
-
   useEffect(() => {
   }, [])
 
@@ -30,11 +26,6 @@ const TopPage: React.FC = () => {
     name:'テスト',
     numOfMembers: 10
   }
-
-  console.log("dispatch dummydata name=" + dummydata.name);
-  dispatch(setStateSlackChannelTable(dummydata));
-
-
 
   return (
     <div className="App">
