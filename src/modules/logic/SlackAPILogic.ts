@@ -26,11 +26,9 @@ export const getSlackChannelListAPIData = async(
   let channelList:SlackChannelListTableType[] = [];
     console.log('[getDispathData] start')
     const response = await axios.get('https://dxservice-javafuncsample.azurewebsites.net/api/slackchannels?');
-    console.log('[getDispathData]  set channelList')
     channelList = response.data.result;
 //    setData(channelList)
 
-  console.log('[getDispathData]  const newList')
   const newSelectList: OptionListType[] = []
 
   channelList.forEach((data) => {
@@ -43,9 +41,9 @@ export const getSlackChannelListAPIData = async(
     }
 
   })
-  console.log('[getDispathData]  getData')
 
   // データセット
+  console.log('[getDispathData]  set channelList')
   dispatch(setStateSlackChannelListTable(channelList))
 
   console.log('[getSlackChannelListAPIData] end ')
