@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
 import { useAppDispatch, useAppSelector } from '../../../store/store.hooks';
 
 // type
-import {SlackChannelListTableType} from './SlackChannelListTable.type'
 
 // 
 import { getSlackChannelListAPIData } from '../../../modules/logic/SlackAPILogic';
@@ -18,11 +17,12 @@ const SlackChannelListTable: React.FC = () => {
   const tableData = useAppSelector((s) => s.SlackChannelList);
 
   useEffect(() => {
-    if ( tableData === null || tableData?.length === 0 ) {
-      console.log('[TopPage] getSlackChannelListAPIData')
-      getSlackChannelListAPIData(dispatch);
-    } 
   }, [])
+
+  if ( tableData === null || tableData?.length === 0 ) {
+    console.log('[TopPage] getSlackChannelListAPIData')
+    getSlackChannelListAPIData(dispatch);
+  } 
 
 
 /*

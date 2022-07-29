@@ -9,7 +9,6 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 // type
-import {SlackChannelListTableType} from './components/organisms/SlackChannelListTable/SlackChannelListTable.type'
 
 // components
 // pages

@@ -22,17 +22,17 @@ const TopPage: React.FC = () => {
   console.log('redux length:' + tableData.length);
 
   useEffect(() => {
-    const dummydata:SlackChannelListTableType = {
-      id: 'test',
-      isArchived:true,
-      name:'テスト',
-      numOfMembers: 10
-    }
-  
-    console.log("dispatch dummydata name=" + dummydata.name);
-    dispatch(setStateSlackChannelTable(dummydata));
-
   }, [])
+
+  const dummydata:SlackChannelListTableType = {
+    id: 'test',
+    isArchived:true,
+    name:'テスト',
+    numOfMembers: 10
+  }
+
+  console.log("dispatch dummydata name=" + dummydata.name);
+  dispatch(setStateSlackChannelTable(dummydata));
 
 
 
