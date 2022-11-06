@@ -7,9 +7,9 @@ export const store = configureStore({
   reducer: {
     SlackChannel: SlackChannelReducer,
     SlackChannelList: SlackChannelListReducer,
-    SlackUserCommentListReducer: SlackUserCommentListReducer,
-  },
-});
+    SlackUserCommentListReducer: SlackUserCommentListReducer
+  }
+})
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

@@ -26,7 +26,7 @@
     "redux": "^4.2.0",
     "slack": "^11.0.2",
     "storybook": "^6.4.19",
-    "typescript": "^4.6.2",
+    "typescript": "*",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -80,7 +80,15 @@
     "@storybook/preset-create-react-app": "^4.0.2",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
     "chart.js": "^3.7.1",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.31.10",
+    "prettier": "^2.7.1",
     "react-chartjs-2": "^4.1.0",
     "webpack": "^5.70.0"
   }

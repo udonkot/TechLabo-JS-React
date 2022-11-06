@@ -1,48 +1,26 @@
 // liblary
-import React from 'react';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {Provider} from 'react-redux'
-import {store} from './store/store.config'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 // style
-import './App.css';
+import './App.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 // type
 
 // components
 // pages
-import TopPage from './components/pages/TopPage/TopPage';
-import About from './components/pages/About/About';
-import Navigate from './components/pages/Navigate/Navigate';
-import SlackChannelCommentMonitor from './components/organisms/SlackChannelCommentMonitor/SlackChannelCommentMonitor';
-import SlackChannelListTable from './components/pages/SlackChannelListTable/SlackChannelListTable';
-
+import { Navigate } from './components/pages/Navigate/Navigate'
+import { RouteList } from './components/pages/Route/RouteList/RouteList'
 
 const App: React.FC = () => {
-  console.log('[App] start')
-
-//  const [data, setData] = React.useState<SlackChannelListTableType[]>([]);
-//  const [selectList, setSelectList] = React.useState<OptionListType[]>([])
-
-  // TODO:SlackAPIコール
-  // reduxにdhispatch
-
   // UI
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Navigate/>
-        <Routes>
-          <Route path='/' element={<TopPage/>}/>
-          <Route path='/about'element={<About/>} />
-           <Route path='/SlackChannelListTable' element={<SlackChannelListTable />} />
-          <Route path='/slackchannelcommentMonitor'  element={<SlackChannelCommentMonitor/>} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
-  );
-
+    <BrowserRouter>
+      <Navigate />
+      <RouteList />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
