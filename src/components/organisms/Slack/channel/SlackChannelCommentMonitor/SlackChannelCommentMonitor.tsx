@@ -1,13 +1,16 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
-import GrapthBar from '../../atoms/Grapth/GrapthBar'
-import { OptionListType } from '../../atoms/SelectBox/OptionList.type'
-import SelectBox from '../../atoms/SelectBox/SelectBox'
-import { Title } from '../../atoms/Title/Title'
+import GrapthBar from '../../../../atoms/Grapth/GrapthBar'
+import { OptionListType } from '../../../../atoms/SelectBox/OptionList.type'
+import SelectBox from '../../../../atoms/SelectBox/SelectBox'
+import { Title } from '../../../../atoms/Title/Title'
 import axios from 'axios'
 import { SlackChannelCommentResponseType } from './SlackChannelCommentMonitor.type'
-import { useAppDispatch, useAppSelector } from '../../../store/store.hooks'
-import { getSlackChannelListAPIData } from '../../../modules/logic/SlackAPILogic'
+import {
+  useAppDispatch,
+  useAppSelector
+} from '../../../../../store/store.hooks'
+import { getSlackChannelListAPIData } from '../../../../../modules/logic/SlackAPILogic'
 
 /*
 const DUMMY_DATALIST = {

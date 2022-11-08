@@ -8,7 +8,7 @@ import { setState as setStateSlackChannelCommentList } from '../slice/SlackUserC
 import { AppDispatch } from '../../store/store.config'
 
 // type
-import { SlackChannelListTableType } from '../../components/organisms/SlackChannelListTable/SlackChannelListTable.type'
+import { SlackChannelListTableType } from '../../components/organisms/Slack/channel/SlackChannelListTable/SlackChannelListTable.type'
 import { OptionListType } from '../../components/atoms/SelectBox/OptionList.type'
 import { UserCommentListType } from '../../components/molecules/SlackCommentSummaryTable/UserCommentList.type'
 

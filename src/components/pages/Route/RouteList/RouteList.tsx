@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import TopPage from '../../TopPage/TopPage'
 import About from '../../About/About'
 import { Kondo } from '../../../organisms/Kondo/Kondo'
-import { SlackChannelCommentMonitor } from '../../../organisms/SlackChannelCommentMonitor/SlackChannelCommentMonitor'
-import SlackChannelListTable from '../../../organisms/SlackChannelListTable/SlackChannelListTable'
+import { SlackChannelCommentMonitor } from '../../../organisms/Slack/channel/SlackChannelCommentMonitor/SlackChannelCommentMonitor'
+import SlackChannelListTable from '../../../organisms/Slack/channel/SlackChannelListTable/SlackChannelListTable'
 
 export const RouteList: React.FC = () => {
   return (

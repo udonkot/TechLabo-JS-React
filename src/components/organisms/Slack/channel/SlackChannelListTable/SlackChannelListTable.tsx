@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import Table from 'react-bootstrap/Table'
-import { useAppSelector } from '../../../store/store.hooks'
+import { useAppSelector } from '../../../../../store/store.hooks'
 
 // type
 
@@ -53,7 +53,7 @@ const SlackChannelListTable: React.FC = () => {
             <td>{data.name}</td>
             <td>{data.id}</td>
             <td>{data.numOfMembers}</td>
-            <td>{data.isArchived ? 'アーカイブ中' : '公開中'}</td>
+            <td>公開中</td>
           </tr>
         )
       })
