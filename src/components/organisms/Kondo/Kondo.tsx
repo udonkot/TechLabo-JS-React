@@ -1,59 +1,49 @@
 import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap'
 import { Title } from '../../atoms/Title/Title'
-import { KondoSub } from './KondoSub'
-
-export interface CheckBoxType {
-  id: string
-  value: string
-  checked: boolean
-  onChange: () => void
-}
-
-const CheckBox = (param: CheckBoxType): JSX.Element => {
-  return (
-    <>
-      <input
-        type="checkbox"
-        id={param.id}
-        value={param.value}
-        checked={param.checked}
-        onChange={param.onChange}
-      />
-    </>
-  )
-}
+import { UseEffectParent } from './HooksSample/useEffect/UseEffectParent'
+import { Radar } from './chartJsSample/Radar/Radar'
+import { ConpitencyCloudCheck } from './ConpitencyCloudCheck/ConpitencyCloudCheck'
 
 export const Kondo: React.FC = () => {
-  const [showSub, setShowSub] = useState<boolean>(false)
-  const [childButtonClick, setChildButtonClick] = useState<boolean>(false)
-  const [useEffectCnt, setUseEffectCnt] = useState<number>(0)
+  const [showUseEffect, setShowUseEffect] = useState<boolean>(false)
+  const [showRadar, setShowRadar] = useState<boolean>(false)
+  const [showConpitencyCloud, setShowConpitencyCloud] = useState<boolean>(false)
 
   useEffect(() => {
-    setUseEffectCnt(useEffectCnt + 1)
-  }, [childButtonClick])
+    //
+  }, [])
 
-  const childButtonOnClick = (): void => {
-    setChildButtonClick(!childButtonClick)
-  }
+  // const clickHandler = (event: React.MouseEventHandler<HTMLButtonElement>) => {
+  //   setShowUseEffect(true)
+  // }
+
+  // function clickUseEffectSampleButton():
+  //   | React.MouseEventHandler<HTMLButtonElement>
+  //   | undefined {
+
+  //   // throw new Error('Function not implemented.')
+  // }
 
   return (
     <div>
       <Title titleName="Kondo Labo" />
-      親のuseEffect実行回数：{useEffectCnt}
       <br />
-      childButtonClick：{childButtonClick.toString()}
+      <Button onClick={() => setShowUseEffect(!showUseEffect)}>
+        useEffect検証
+      </Button>
       <br />
-      {
-        <CheckBox
-          id="1"
-          value="sub"
-          checked={showSub}
-          onChange={() => setShowSub(!showSub)}
-        />
-      }
-      サブメニュー表示
+      <Button onClick={() => setShowRadar(!showRadar)}>
+        レーダーチャート検証
+      </Button>
       <br />
-      {showSub && <KondoSub parentFunc={childButtonOnClick} />}
+      <Button onClick={() => setShowConpitencyCloud(!showConpitencyCloud)}>
+        コンピテンシークラウド検証
+      </Button>
+      <br />
+      {showUseEffect && <UseEffectParent />}
+      {showRadar && <Radar />}
+      {showConpitencyCloud && <ConpitencyCloudCheck />}
     </div>
   )
 }

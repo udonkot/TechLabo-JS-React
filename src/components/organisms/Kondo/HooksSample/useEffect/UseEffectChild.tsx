@@ -4,7 +4,7 @@ interface Props {
   parentFunc: () => void
 }
 
-export const KondoSub: React.FC<Props> = (props) => {
+export const UseEffectChild: React.FC<Props> = (props) => {
   const [cnt, setCnt] = useState<number>(0)
   const [execCnt, setExecCnt] = useState<number>(0)
 
