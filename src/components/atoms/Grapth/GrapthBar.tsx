@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -6,39 +6,30 @@ import {
   BarElement,
   Title,
   Tooltip,
-  Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
   Legend
-);
+} from 'chart.js'
+import { Bar } from 'react-chartjs-2'
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top' as const,
+      position: 'top' as const
     },
     title: {
       display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
-
+      text: 'Chart.js Bar Chart'
+    }
+  }
+}
 
 interface IProps {
-  dataList: number[],
-  labelList: string[],
+  dataList: number[]
+  labelList: string[]
   title: string
   labelName: string
-
 }
 
 const GrapthBar: React.FC<IProps> = (props) => {
@@ -46,25 +37,27 @@ const GrapthBar: React.FC<IProps> = (props) => {
     responsive: true,
     plugins: {
       legend: {
-        position: 'top' as const,
+        position: 'top' as const
       },
       title: {
         display: true,
-        text: props.title,
-      },
-    },
+        text: props.title
+      }
+    }
   }
 
   const data = {
     labels: props.labelList,
-    datasets: [{
-      label: props.labelName,
-      data: props.dataList,
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    }]
+    datasets: [
+      {
+        label: props.labelName,
+        data: props.dataList,
+        backgroundColor: 'rgba(255, 99, 132, 0.5)'
+      }
+    ]
   }
 
-  return <Bar options={options} data={data} />;
+  return <Bar options={options} data={data} />
 }
 
-export default GrapthBar;
+export default GrapthBar
