@@ -35,8 +35,6 @@ ChartJS.register(
   Legend
 )
 
-const DUMMY_DATA = []
-
 const GrapthRadar: React.FC<IProps> = (props) => {
   const options = {
     plugins: {

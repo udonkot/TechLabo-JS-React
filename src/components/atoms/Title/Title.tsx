@@ -1,13 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 interface IProps {
-  titleName:string
+  titleName: string
 }
 
-export const Title:React.FC<IProps> = (props) => {
-  return (
-    <div className='Title'>
-      {props.titleName}
-    </div>
-  )
+export const Title: React.FC<IProps> = (props) => {
+  return <div className="Title">{props.titleName}</div>
 }

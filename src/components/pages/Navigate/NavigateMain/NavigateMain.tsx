@@ -1,6 +1,5 @@
 import React from 'react'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export const NavigateMain: React.FC = () => {

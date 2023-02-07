@@ -1,6 +1,10 @@
 import React from 'react'
 import GrapthRadar from '../../../../atoms/Grapth/GrapthRadar/GrapthRadar'
-interface Props {}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface Props {
+  //
+}
 
 export const Radar: React.FC<Props> = (props) => {
   const dataList = {

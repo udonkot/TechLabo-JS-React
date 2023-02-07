@@ -4,6 +4,8 @@ import { Title } from '../../atoms/Title/Title'
 import { UseEffectParent } from './HooksSample/useEffect/UseEffectParent'
 import { Radar } from './chartJsSample/Radar/Radar'
 import { ConpitencyCloudCheck } from './ConpitencyCloudCheck/ConpitencyCloudCheck'
+// eslint-disable-next-line
+// import { WebClient } from '@slack/web-api'
 
 export const Kondo: React.FC = () => {
   const [showUseEffect, setShowUseEffect] = useState<boolean>(false)
@@ -13,6 +15,22 @@ export const Kondo: React.FC = () => {
   useEffect(() => {
     //
   }, [])
+
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  const sendButtonClick = () => {
+    // const client = new WebClient()
+    // const channelId = ''
+    // // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    // const sendMessage = async () => {
+    //   //
+    //   await client.chat.postMessage({
+    //     channel: channelId,
+    //     text: 'hello'
+    //   })
+    //   return true
+    // }
+    // void sendMessage()
+  }
 
   // const clickHandler = (event: React.MouseEventHandler<HTMLButtonElement>) => {
   //   setShowUseEffect(true)
@@ -40,6 +58,8 @@ export const Kondo: React.FC = () => {
       <Button onClick={() => setShowConpitencyCloud(!showConpitencyCloud)}>
         コンピテンシークラウド検証
       </Button>
+      <br />
+      <Button onClick={() => sendButtonClick()}>メッセージ送信</Button>
       <br />
       {showUseEffect && <UseEffectParent />}
       {showRadar && <Radar />}
